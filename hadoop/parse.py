@@ -19,19 +19,20 @@ for item in filename:
         userid = tmp[0]
         adid = tmp[2]+tmp[3]
         if userid in transformData.keys():
-            output.write(userid + ' ' + adid + ' 1')
+            output.write(userid + ' ' + adid + ' 1\n')
         else:
-            output.write(userid + ' ' + adid + ' 0')
+            output.write(userid + ' ' + adid + ' 0\n')
     input.close()
 output.close()
 
 output = open('validationInput')
 for item in filename:
+    print item
     input = open('./validation/monitorData/' + item)
     for line in input:
         tmp = line.split('^')
         userid = tmp[0]
         adid = tmp[2] + tmp[3]
-        output.write(userid + ' ' + adid + ' 1')
+        output.write(userid + ' ' + adid + ' 1\n')
     input.close()
 output.close()
